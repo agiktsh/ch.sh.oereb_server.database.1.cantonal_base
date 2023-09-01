@@ -88,4 +88,4 @@ jobs:
           -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
           --request POST \
           --data '{"event_type": "base_image_was_updated", "client_payload": {}}' \
-          https://api.github.com/repos/opengisch/sh.oereb.oereb-server.database/dispatches
+          https://api.github.com/repos/agiktsh/ch.sh.oereb_server.database.2.oereb_themes/dispatches
