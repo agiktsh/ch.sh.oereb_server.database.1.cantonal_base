@@ -58,7 +58,7 @@ jobs:
             -e PG_GRETL_PWD=$PG_GRETL_PWD \
             -e SCHEMA=$SCHEMA \
             -p 54321:5432 \
-            ghcr.io/openoereb/ch.oereb_base:latest
+            ghcr.io/agiktsh/ch.sh.oereb_server.database.0.federal_base:latest
           until docker exec $CONTAINERNAME pg_isready; do \
             echo "$CONTAINERNAME was not ready, waiting another cycle"; \
             sleep 5; \
