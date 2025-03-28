@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ili2pg_executable=$(find /tmp/ili2pg -iname 'ili2pg*.jar')
+ili2pg_executable=$(find ./ -iname 'ili2pg*.jar')
 model="DM01AVCH24LV95D"
 topics="DM01AVCH24LV95D.Liegenschaften;DM01AVCH24LV95D.Gemeindegrenzen;DM01AVCH24LV95D.Gebaeudeadressen"
 
@@ -15,5 +15,6 @@ for f in ./*.itf; do
     --dbschema "$SCHEMA" \
     --models "$model" \
     --topics "$topics" \
+    --modeldir scripts/ili2pg/ilimodels \
     --disableValidation "$f"
 done

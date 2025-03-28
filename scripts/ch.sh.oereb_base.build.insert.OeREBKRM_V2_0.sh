@@ -1,7 +1,7 @@
 #!/bin/bash
 set -Eeuo pipefail
 
-ili2pg_executable=$(find /tmp/ili2pg -iname 'ili2pg*.jar')
+ili2pg_executable=$(find ./ -iname 'ili2pg*.jar')
 model="OeREBKRM_V2_0;OeREBKRMkvs_V2_0"
 
 java -jar "$ili2pg_executable" \
@@ -17,5 +17,5 @@ java -jar "$ili2pg_executable" \
   --disableValidation \
   --importBid \
   --importTid \
-  --modeldir http://models.interlis.ch/ \
+  --modeldir scripts/ili2pg/ilimodels \
   ch.sh.OeREBKRM_V2_0.xml
