@@ -24,7 +24,6 @@ jobs:
       PG_READ_PWD: ${{ secrets.PG_READ_PWD }}
       PG_WRITE_PWD: ${{ secrets.PG_WRITE_PWD }}
       PG_GRETL_PWD: ${{ secrets.PG_GRETL_PWD }}
-      ILI2PG_VERSION: 4.9.1
 
     steps:
       - uses: actions/checkout@v3
@@ -38,12 +37,6 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install ili2db
-        run: |
-          curl -o /tmp/ili2pg-$ILI2PG_VERSION.zip https://downloads.interlis.ch/ili2pg/ili2pg-$ILI2PG_VERSION.zip
-          mkdir /tmp/ili2pg
-          unzip -d /tmp/ili2pg /tmp/ili2pg-${ILI2PG_VERSION}.zip
-          chmod -R ogu+rwx /tmp/ili2pg/*
 
       - name: Start database structure
         run: |
